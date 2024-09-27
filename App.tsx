@@ -153,13 +153,18 @@
 // export default StickyFlatListTable;
 
 import React from 'react';
-import {View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import TableComponent from './src/component/TableComponent';
 import {tableData} from './src/utility/jsonData';
+
 export default function App() {
   return (
-    <View style={{flex: 1, padding: 5}}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        margin: 10,
+      }}>
       <TableComponent data={tableData} />
-    </View>
+    </SafeAreaView>
   );
 }
