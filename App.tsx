@@ -152,19 +152,79 @@
 
 // export default StickyFlatListTable;
 
-import React from 'react';
-import {SafeAreaView} from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView, ScrollView, Text } from 'react-native';
 import TableComponent from './src/component/TableComponent';
-import {tableData} from './src/utility/jsonData';
-
+import { tableData } from './src/utility/jsonData';
+import DraggableModal from './src/half-modal/HalfModal';
+// import RnOtpInputs from './src/otp/RnOtpInputs';
 export default function App() {
+  // const [value, setValue] = useState<number>(0);
+  // const [error, setError] = useState<boolean>(false);
+  const [isHalfModalVisible, setHalfModalVisible] = useState(true);
   return (
     <SafeAreaView
       style={{
         flex: 1,
         margin: 10,
       }}>
-      <TableComponent data={tableData} />
+      {/* <RnOtpInputs
+        pinCount={4}
+        mode="rectangle"
+        onSubmit={e => {
+          console.log('e', e, typeof e);
+          setError(true);
+        }}
+        autoSubmit={false}
+        borderRadius={6}
+        borderWidth={1}
+        borderColor="#A768F1"
+        bgColor="#D9E3F6"
+        textColor="#000000"
+        onChageValue={e => {
+          setValue(e);
+          setError(false);
+        }}
+        keyboardType="number-pad"
+        buttonTitle="Verify & Proceed"
+        Minute={1}
+        Second={0}
+        onlyResendOtp={false}
+        onResendClick={() => {
+          console.log('jj');
+        }}
+        isError={error}
+        errorMsg="Invalid OTP"
+      /> */}
+      {/* <TableComponent data={tableData} /> */}
+      {/* <DraggableModal
+        modalVisible={isHalfModalVisible}
+        setModalVisible={setHalfModalVisible}
+        dragIconName="dots"
+        modalWidth="100%"
+        modalInitialHeight={200}
+        hasDraggable={true}
+        dragIconColor="skyblue"
+        numberOfDots={3}
+        hasDraggableIcon={true}
+        dragIconStyle={{
+          //dots style
+          backgroundColor: 'skyblue',
+          width: 8,
+          height: 8,
+          borderRadius: 4,
+          marginHorizontal: 3,
+        }}
+        children={
+          <ScrollView
+            contentContainerStyle={{
+              flexGrow: 1,
+              paddingHorizontal: 5,
+            }}>
+            <Text>Welcome to React Native....</Text>
+          </ScrollView>
+        }
+      /> */}
     </SafeAreaView>
   );
 }
